@@ -1,127 +1,177 @@
 @import "tailwindcss";
 
-/* The Green-Bar Printout - one continuous form. Every value below is a property of that paper. */
-:root {
-  --paper: #f6f3e9;
-  --bar: #d3e6d2;
-  --ink: #1b2733;
-  --ink-muted: #56666f;
-  --ribbon: #c4302b;
-  --ribbon-hover: #a52823;
-  --perf: #ece8db;
-  --desk: #2a2f33;
-  --rule: #b8c3bf;
-  --rule-strong: #7f9088;
+/*
+  Elevated clean professional world. Warm-paper light canvas, near-black grotesk
+  with a monospace data voice, one Action-Blue accent borrowed from the flagship
+  product. The product's own dark navy chrome is quoted verbatim inside the
+  recreation windows - the only dark surfaces on the page.
+*/
 
-  /* Line grid: the printer prints 6 lines per inch; a green bar is 3 lines. */
-  --line: 1.5rem;
-  --bar-h: calc(var(--line) * 3);
-  --strip: 2.5rem;
-}
+@theme {
+  --color-bg: #fbfaf6;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f1e9;
+  --color-surface-3: #eceadf;
+  /* alias kept so the recreation SVG's fill-paper utility resolves to a light box */
+  --color-paper: #ffffff;
 
-@theme inline {
-  --color-paper: var(--paper);
-  --color-bar: var(--bar);
-  --color-ink: var(--ink);
-  --color-ink-muted: var(--ink-muted);
-  --color-ribbon: var(--ribbon);
-  --color-ribbon-hover: var(--ribbon-hover);
-  --color-perf: var(--perf);
-  --color-desk: var(--desk);
-  --color-rule: var(--rule);
-  --color-rule-strong: var(--rule-strong);
-  --font-banner: var(--font-banner);
-  --font-data: var(--font-data);
-  --font-prose: var(--font-prose);
-  --spacing-line: var(--line);
-  --spacing-strip: var(--strip);
+  --color-ink: #17191f;
+  --color-ink-2: #3b4150;
+  --color-ink-muted: #59626f;
+
+  --color-line: #e6e1d5;
+  --color-line-2: #d6d0c1;
+
+  --color-accent: #003da5;
+  --color-accent-2: #1a56db;
+  --color-accent-soft: #e9eff8;
+  --color-accent-ink: #0b2f6e;
+
+  --color-good: #15803d;
+  --color-good-soft: #e6f2ea;
+  --color-warn: #b45309;
+
+  --font-sans: var(--font-sans-src), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-mono-src), ui-monospace, "SF Mono", "Cascadia Code", Menlo, monospace;
+
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --radius-card: 14px;
 }
 
-html {
-  color-scheme: light;
-  scroll-behavior: smooth;
+/* Base defaults live in @layer base so Tailwind utilities (a later layer) can override them. */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-line);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--color-line-2) var(--color-surface-2);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface-2);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-2);
+    border: 3px solid var(--color-surface-2);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #bcb5a3;
+  }
+}
+
+@layer components {
+  /* Monospace "data voice": labels, metrics, kickers, tabular figures. */
+  .t-data {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum";
+  }
+
+  .leading-line {
+    line-height: 1.5rem;
+  }
+
+  /* Small uppercase mono tag used sparingly instead of decorative eyebrows. */
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+
+  /* Underline that grows from the left on hover - for inline text links. */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1.5px;
+    transition: background-size 0.3s var(--ease-out-expo);
+    padding-bottom: 1px;
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1.5px;
+  }
+}
+
+/* Mobile nav drawer entrance. */
+@keyframes pwx-drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.pwx-drawer {
+  animation: pwx-drawer-in 0.25s var(--ease-out-expo);
+}
+
+/* Slow drift for the hero node-mesh poster fallback. */
+@keyframes pwx-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -10px, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+  .pwx-drawer,
+  [class*="pwx-"] {
+    animation: none !important;
+  }
 }
 
-body {
-  background-color: var(--paper);
-  /* Green bars: 3 lines of bar, 3 lines of paper, aligned to the line grid and scrolling with the sheet. */
-  background-image: linear-gradient(to bottom, var(--bar) 0, var(--bar) var(--bar-h), transparent var(--bar-h), transparent calc(var(--bar-h) * 2));
-  background-size: 100% calc(var(--bar-h) * 2);
-  color: var(--ink);
-  font-family: var(--font-prose), system-ui, sans-serif;
-  font-size: 1rem;
-  line-height: var(--line);
-  font-variant-numeric: tabular-nums;
-  -webkit-font-smoothing: antialiased;
+/* Gentle scroll-cue nudge - smooth ease, not a bounce. */
+@keyframes pwx-nudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
 }
-
-/* Browser surfaces belong to the paper too. */
-::selection {
-  background: var(--ink);
-  color: var(--paper);
-}
-:focus-visible {
-  outline: 2px solid var(--ribbon);
-  outline-offset: 2px;
-  border-radius: 2px;
-}
-input, textarea {
-  caret-color: var(--ribbon);
-}
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--rule-strong) var(--perf);
-}
-a {
-  text-underline-offset: 0.18em;
-  text-decoration-thickness: 1px;
-}
-
-/* Type roles */
-.t-data {
-  font-family: var(--font-data), ui-monospace, monospace;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0;
-}
-.t-banner {
-  font-family: var(--font-banner), var(--font-data), monospace;
-  letter-spacing: 0.02em;
-}
-
-/* Tractor-feed strips: perforated edges with holes every line, the desk showing through. */
-.tractor {
-  background-color: var(--perf);
-  background-image: radial-gradient(circle at 50% 50%, var(--desk) 0 0.28rem, transparent 0.3rem);
-  background-size: 100% var(--line);
-  background-position: 0 calc(var(--line) / 2);
-  border-inline: 1px dashed var(--rule-strong);
-}
-
-/* Fan-fold perforation between pages. */
-.perforation {
-  height: 1px;
-  background-image: linear-gradient(to right, var(--rule-strong) 0 6px, transparent 6px 10px);
-  background-size: 10px 1px;
-}
-
-/* Dot-matrix banner grid cells */
-.banner-cell {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-}
-.banner-cell[data-on="1"] {
-  background: var(--ink);
-}
-
-/* Print-head reveal: rows start clipped and unclip as the head passes. Default = visible (no-JS safe). */
-.print-row {
-  clip-path: inset(0 0 0 0);
+.pwx-nudge {
+  animation: pwx-nudge 2.4s ease-in-out infinite;
 }

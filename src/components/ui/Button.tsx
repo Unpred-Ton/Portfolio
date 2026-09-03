@@ -1,31 +1,53 @@
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 import { Icon, type IconName } from "./Icon";
+
+type Variant = "primary" | "outline" | "ghost";
 
 interface ButtonLinkProps {
   href: string;
   children: React.ReactNode;
   icon?: IconName;
-  variant?: "ribbon" | "ink";
+  iconLeft?: IconName;
+  variant?: Variant;
   download?: boolean;
   external?: boolean;
   className?: string;
 }
 
 const base =
-  "inline-flex min-h-11 items-center gap-2 rounded-[2px] px-4 text-sm font-semibold uppercase tracking-[0.04em] transition-[background-color,transform] duration-150 ease-out-expo active:scale-[0.98] t-data";
+  "group inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 text-[0.9375rem] font-semibold tracking-[-0.01em] transition-[background-color,color,border-color,box-shadow,transform] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98] focus-visible:outline-offset-2";
 
-const variants = {
-  ribbon: "bg-ribbon text-paper hover:bg-ribbon-hover",
-  ink: "border border-ink text-ink hover:bg-ink hover:text-paper",
+const variants: Record<Variant, string> = {
+  primary:
+    "bg-accent text-white shadow-[0_1px_2px_rgba(0,61,165,0.25),0_8px_24px_-12px_rgba(0,61,165,0.55)] hover:bg-accent-2 hover:shadow-[0_2px_4px_rgba(0,61,165,0.3),0_14px_30px_-14px_rgba(0,61,165,0.6)]",
+  outline: "border border-line-2 bg-surface text-ink hover:border-ink hover:bg-surface-2",
+  ghost: "px-2 text-ink-2 hover:text-accent",
 };
 
-/** Red ribbon is reserved for actions. Nothing else on the paper is red. */
-export function ButtonLink({ href, children, icon, variant = "ink", download, external, className }: ButtonLinkProps) {
-  const cls = `${base} ${variants[variant]} ${className ?? ""}`;
+export function ButtonLink({
+  href,
+  children,
+  icon,
+  iconLeft,
+  variant = "primary",
+  download,
+  external,
+  className,
+}: ButtonLinkProps) {
+  const cls = cn(base, variants[variant], className);
+  const animatedArrow = icon === "arrow-right";
   const inner = (
     <>
+      {iconLeft ? <Icon name={iconLeft} size={17} /> : null}
       {children}
-      {icon ? <Icon name={icon} size={16} /> : null}
+      {icon ? (
+        <Icon
+          name={icon}
+          size={17}
+          className={animatedArrow ? "transition-transform duration-200 group-hover:translate-x-0.5" : undefined}
+        />
+      ) : null}
     </>
   );
   if (external) {

@@ -1,6 +1,22 @@
 import type { SVGProps } from "react";
 
-export type IconName = "download" | "mail" | "external" | "linkedin" | "github" | "arrow-right" | "check";
+export type IconName =
+  | "download"
+  | "mail"
+  | "external"
+  | "linkedin"
+  | "github"
+  | "arrow-right"
+  | "arrow-down"
+  | "arrow-up-right"
+  | "chevron-down"
+  | "chevron-right"
+  | "check"
+  | "menu"
+  | "close"
+  | "plus"
+  | "shield"
+  | "location";
 
 const PATHS: Record<IconName, React.ReactNode> = {
   download: (
@@ -44,7 +60,52 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <path d="m14 6 6 6-6 6" />
     </>
   ),
+  "arrow-down": (
+    <>
+      <path d="M12 4v16" />
+      <path d="m6 14 6 6 6-6" />
+    </>
+  ),
+  "arrow-up-right": (
+    <>
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </>
+  ),
+  "chevron-down": <path d="m6 9 6 6 6-6" />,
+  "chevron-right": <path d="m9 6 6 6-6 6" />,
   check: <path d="m5 12 5 5L20 7" />,
+  menu: (
+    <>
+      <path d="M4 7h16" />
+      <path d="M4 12h16" />
+      <path d="M4 17h16" />
+    </>
+  ),
+  close: (
+    <>
+      <path d="M6 6 18 18" />
+      <path d="M18 6 6 18" />
+    </>
+  ),
+  plus: (
+    <>
+      <path d="M12 5v14" />
+      <path d="M5 12h14" />
+    </>
+  ),
+  shield: (
+    <>
+      <path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z" />
+      <path d="m9 12 2 2 4-4" />
+    </>
+  ),
+  location: (
+    <>
+      <path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10Z" />
+      <circle cx="12" cy="11" r="2" />
+    </>
+  ),
 };
 
 interface IconProps extends SVGProps<SVGSVGElement> {

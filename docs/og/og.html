@@ -4,45 +4,55 @@
 <meta charset="utf-8" />
 <title>OG image source - Johnson Bolhayon</title>
 <style>
-  @font-face { font-family: "Workbench"; src: url("../../src/app/fonts/workbench.woff2") format("woff2"); }
   @font-face { font-family: "Martian Mono"; src: url("../../src/app/fonts/martian-mono.woff2") format("woff2"); font-weight: 100 800; }
   @font-face { font-family: "Schibsted Grotesk"; src: url("../../src/app/fonts/schibsted-grotesk.woff2") format("woff2"); font-weight: 400 900; }
   html, body { margin: 0; }
   body {
     width: 1200px; height: 630px; overflow: hidden; position: relative;
-    background-color: #f6f3e9;
-    background-image: linear-gradient(to bottom, #d3e6d2 0, #d3e6d2 72px, transparent 72px, transparent 144px);
-    background-size: 100% 144px;
-    color: #1b2733; font-family: "Schibsted Grotesk", system-ui, sans-serif;
+    background-color: #fbfaf6;
+    color: #17191f; font-family: "Schibsted Grotesk", system-ui, sans-serif;
   }
-  .printer { position: absolute; inset: 0 0 auto 0; height: 84px; background: #2a2f33; }
-  .printer::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: #3a4147; }
-  .printer::after { content: ""; position: absolute; left: 40px; right: 40px; bottom: 10px; height: 4px; background: #0f1214; }
-  .sprocket { position: absolute; bottom: 4px; width: 26px; height: 26px; border-radius: 50%; background: #8e979c; }
-  .tractor { position: absolute; top: 84px; bottom: 0; width: 44px; background-color: #ece8db;
-    background-image: radial-gradient(circle at 50% 50%, #2a2f33 0 5px, transparent 5.5px); background-size: 100% 24px; background-position: 0 12px;
-    border-left: 1px dashed #7f9088; border-right: 1px dashed #7f9088; }
-  .content { position: absolute; left: 92px; right: 92px; top: 118px; }
-  .job { font-family: "Martian Mono", monospace; font-size: 15px; color: #56666f; letter-spacing: 0.02em; }
-  .name { font-family: "Workbench", monospace; font-size: 118px; line-height: 1; margin: 22px 0 0; letter-spacing: 0.02em; }
+  .mesh { position: absolute; inset: 0; -webkit-mask-image: linear-gradient(to right, transparent 32%, black 80%); mask-image: linear-gradient(to right, transparent 32%, black 80%); }
+  .content { position: absolute; left: 80px; top: 96px; right: 80px; }
+  .mono { position: absolute; left: 80px; top: 90px; display: inline-flex; align-items: center; gap: 12px; }
+  .badge { width: 44px; height: 44px; border-radius: 10px; background: #17191f; color: #fbfaf6; font-family: "Martian Mono", monospace; font-weight: 700; font-size: 17px; display: flex; align-items: center; justify-content: center; }
+  .badgetext { font-family: "Martian Mono", monospace; font-size: 15px; letter-spacing: 0.02em; color: #59626f; }
+  .name { font-weight: 800; font-size: 104px; line-height: 0.92; letter-spacing: -0.045em; margin: 70px 0 0; }
   .name span { display: block; }
-  .tag { font-family: "Martian Mono", monospace; font-size: 17px; text-transform: uppercase; letter-spacing: 0.06em; color: #56666f; margin-top: 22px; }
-  .line { font-size: 34px; font-weight: 500; margin-top: 12px; max-width: 900px; }
-  .ribbon { position: absolute; right: 92px; bottom: 60px; background: #c4302b; color: #f6f3e9; font-family: "Martian Mono", monospace; font-weight: 600; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; padding: 14px 20px; }
-  .ruler { position: absolute; left: 92px; right: 92px; bottom: 26px; font-family: "Martian Mono", monospace; font-size: 12px; color: #56666f; white-space: nowrap; overflow: hidden; }
+  .role { font-family: "Martian Mono", monospace; font-size: 16px; text-transform: uppercase; letter-spacing: 0.12em; color: #59626f; margin-top: 26px; }
+  .line { font-size: 30px; font-weight: 500; margin-top: 14px; max-width: 720px; color: #3b4150; }
+  .line b { color: #17191f; }
+  .foot { position: absolute; left: 80px; bottom: 46px; right: 80px; display: flex; gap: 44px; align-items: baseline; border-top: 1px solid #e6e1d5; padding-top: 22px; }
+  .stat b { font-family: "Martian Mono", monospace; font-size: 22px; font-weight: 700; color: #003da5; }
+  .stat span { font-family: "Martian Mono", monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #59626f; margin-left: 8px; }
 </style>
 </head>
 <body>
-  <div class="printer"><div class="sprocket" style="left:14px"></div><div class="sprocket" style="right:14px"></div></div>
-  <div class="tractor" style="left:0"></div>
-  <div class="tractor" style="right:0"></div>
+  <svg class="mesh" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+    <g stroke="#003da5" stroke-opacity="0.18" stroke-width="1.2">
+      <line x1="760" y1="90" x2="900" y2="180"/><line x1="900" y1="180" x2="1000" y2="90"/>
+      <line x1="900" y1="180" x2="860" y2="330"/><line x1="860" y1="330" x2="740" y2="260"/>
+      <line x1="740" y1="260" x2="760" y2="90"/><line x1="860" y1="330" x2="1030" y2="300"/>
+      <line x1="740" y1="260" x2="700" y2="440"/><line x1="700" y1="440" x2="840" y2="500"/>
+      <line x1="1030" y1="300" x2="1090" y2="430"/><line x1="840" y1="500" x2="1090" y2="430"/>
+      <line x1="900" y1="180" x2="1120" y2="200"/>
+    </g>
+    <g fill="#1a56db" fill-opacity="0.8">
+      <circle cx="760" cy="90" r="4"/><circle cx="900" cy="180" r="4"/><circle cx="1000" cy="90" r="4"/>
+      <circle cx="860" cy="330" r="4"/><circle cx="740" cy="260" r="4"/><circle cx="1030" cy="300" r="4"/>
+      <circle cx="700" cy="440" r="4"/><circle cx="840" cy="500" r="4"/><circle cx="1090" cy="430" r="4"/><circle cx="1120" cy="200" r="4"/>
+    </g>
+  </svg>
+  <div class="mono"><div class="badge">JB</div><div class="badgetext">johnsonbolhayon.dev</div></div>
   <div class="content">
-    <div class="job">**** JOB 0001 **** BANNER PAGE **** PRINTED FOR: WHOEVER IS HIRING</div>
-    <h1 class="name"><span>JOHNSON</span><span>BOLHAYON</span></h1>
-    <div class="tag">Data automation engineer · Web application developer</div>
-    <div class="line">I turn repetitive, high-volume data work into systems teams rely on.</div>
+    <h1 class="name"><span>Johnson</span><span>Bolhayon</span></h1>
+    <div class="role">Data automation engineer / full-stack web developer</div>
+    <div class="line">I turn repetitive, high-volume data work into <b>systems teams rely on</b>.</div>
   </div>
-  <div class="ribbon">Tear off the CV</div>
-  <div class="ruler">----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0----+----1----+----2----+----3</div>
+  <div class="foot">
+    <div class="stat"><b>9+ yrs</b><span>data automation</span></div>
+    <div class="stat"><b>140+</b><span>franchises served</span></div>
+    <div class="stat"><b>In production</b><span>on Google Cloud</span></div>
+  </div>
 </body>
 </html>
