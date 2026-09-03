@@ -1,16 +1,127 @@
 @import "tailwindcss";
 
+/* The Green-Bar Printout - one continuous form. Every value below is a property of that paper. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f6f3e9;
+  --bar: #d3e6d2;
+  --ink: #1b2733;
+  --ink-muted: #56666f;
+  --ribbon: #c4302b;
+  --ribbon-hover: #a52823;
+  --perf: #ece8db;
+  --desk: #2a2f33;
+  --rule: #b8c3bf;
+  --rule-strong: #7f9088;
+
+  /* Line grid: the printer prints 6 lines per inch; a green bar is 3 lines. */
+  --line: 1.5rem;
+  --bar-h: calc(var(--line) * 3);
+  --strip: 2.5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-bar: var(--bar);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ribbon: var(--ribbon);
+  --color-ribbon-hover: var(--ribbon-hover);
+  --color-perf: var(--perf);
+  --color-desk: var(--desk);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --font-banner: var(--font-banner);
+  --font-data: var(--font-data);
+  --font-prose: var(--font-prose);
+  --spacing-line: var(--line);
+  --spacing-strip: var(--strip);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--paper);
+  /* Green bars: 3 lines of bar, 3 lines of paper, aligned to the line grid and scrolling with the sheet. */
+  background-image: linear-gradient(to bottom, var(--bar) 0, var(--bar) var(--bar-h), transparent var(--bar-h), transparent calc(var(--bar-h) * 2));
+  background-size: 100% calc(var(--bar-h) * 2);
+  color: var(--ink);
+  font-family: var(--font-prose), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: var(--line);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Browser surfaces belong to the paper too. */
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+:focus-visible {
+  outline: 2px solid var(--ribbon);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+input, textarea {
+  caret-color: var(--ribbon);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule-strong) var(--perf);
+}
+a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+/* Type roles */
+.t-data {
+  font-family: var(--font-data), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+.t-banner {
+  font-family: var(--font-banner), var(--font-data), monospace;
+  letter-spacing: 0.02em;
+}
+
+/* Tractor-feed strips: perforated edges with holes every line, the desk showing through. */
+.tractor {
+  background-color: var(--perf);
+  background-image: radial-gradient(circle at 50% 50%, var(--desk) 0 0.28rem, transparent 0.3rem);
+  background-size: 100% var(--line);
+  background-position: 0 calc(var(--line) / 2);
+  border-inline: 1px dashed var(--rule-strong);
+}
+
+/* Fan-fold perforation between pages. */
+.perforation {
+  height: 1px;
+  background-image: linear-gradient(to right, var(--rule-strong) 0 6px, transparent 6px 10px);
+  background-size: 10px 1px;
+}
+
+/* Dot-matrix banner grid cells */
+.banner-cell {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.banner-cell[data-on="1"] {
+  background: var(--ink);
+}
+
+/* Print-head reveal: rows start clipped and unclip as the head passes. Default = visible (no-JS safe). */
+.print-row {
+  clip-path: inset(0 0 0 0);
 }

@@ -1,4 +1,5 @@
 import { SceneRoot } from "@/components/three/SceneRoot";
+import { Paper } from "@/components/ui/Paper";
 import { Hero } from "@/components/sections/Hero";
 import { Arc } from "@/components/sections/Arc";
 import { Flagship } from "@/components/sections/Flagship";
@@ -12,16 +13,18 @@ export default function Home() {
   return (
     <>
       <SceneRoot />
-      <main id="main">
-        <Hero />
-        <Arc />
-        <Flagship />
-        <Projects />
-        <Skills />
-        <HowIWork />
-        <Contact />
-      </main>
-      <Footer />
+      <Paper>
+        <main id="main">
+          <Hero />
+          <Arc />
+          <Flagship />
+          <Projects />
+          <Skills />
+          <HowIWork />
+          <Contact />
+        </main>
+        <Footer />
+      </Paper>
     </>
   );
 }

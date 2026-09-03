@@ -1,0 +1,2 @@
+The fonts in this directory (Workbench, Martian Mono, Schibsted Grotesk) are distributed under the SIL Open Font License 1.1.
+Copyright belongs to their respective authors; see https://fonts.google.com for each family's OFL text and authors.

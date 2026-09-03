@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 8000",
     "build": "next build",
     "build:local": "NODE_OPTIONS=--max-old-space-size=2048 next build",
-    "start": "next start",
+    "start": "next start -p 8000",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "guard": "node scripts/guard-confidential.mjs",
