@@ -5,7 +5,7 @@ export const site = {
   title: "Johnson Bolhayon - Data Automation Engineer",
   description:
     "From Excel VBA and Google Apps Script to full-stack internal platforms on Next.js, Supabase and Google Cloud. 9+ years turning repetitive, high-volume data work into automated systems.",
-  url: "https://johnsonbolhayon.dev",
+  url: "https://johnsonbolhayon.com",
   email: "johnsondbolhayon@gmail.com",
   linkedin: "https://www.linkedin.com/in/johnson-bolhayon-4201611aa",
   github: "https://github.com/Unpred-Ton",
