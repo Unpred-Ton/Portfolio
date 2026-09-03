@@ -2,13 +2,9 @@ import type { ArchitectureNode, FlagshipTool, Integration, Metric, SecurityLayer
 
 export const flagshipMetrics = [
   { value: "140+", label: "franchises", note: "AU, NZ and US" },
-  { value: "78", label: "API routes" },
-  { value: "~55k", label: "lines of TypeScript" },
   { value: "12", label: "tools" },
-  { value: "~150", label: "store tokens secured" },
   { value: "~130k", label: "support tickets mirrored" },
   { value: "3 yrs", label: "of exports in minutes" },
-  { value: "0", label: "diffs vs the legacy reports" },
 ] satisfies Metric[];
 
 export const securityLayers = [
@@ -43,10 +39,10 @@ export const integrations = [
   { id: "lightspeed", name: "Lightspeed X-Series", access: "read-write", note: "Products, inventory, sales history, suppliers, price books. Parallel version-cursor walks for big histories." },
   { id: "google", name: "Google Drive and Sheets", access: "write", note: "Formatted stock-take sheets, month-by-month export trees, tracker archives - all via a service account." },
   { id: "apps-script", name: "Google Apps Script webhooks", access: "write", note: "Two separate web apps: sheet actions and assignment emails. The origin story, still in production." },
-  { id: "atlassian", name: "Jira and Confluence", access: "read", note: "Each user's open issues and the team knowledge base, read with one scoped service token." },
-  { id: "freshdesk", name: "Freshdesk", access: "read", note: "Live ticket queues per agent and a whole-account mirror behind the Team Analytics dashboard." },
+  { id: "jira", name: "Jira", access: "read", note: "Each user's open issues surfaced in their dashboard and tracked for resolution, read with one scoped service token." },
+  { id: "confluence", name: "Confluence", access: "read-write", note: "The team knowledge base: read into the app for ticket-doc suggestions, and updated directly through Claude Code's Confluence MCP - the documentation is maintained by the AI workflow." },
+  { id: "freshdesk", name: "Freshdesk", access: "read", note: "Live ticket queues per agent and a whole-account mirror powering the team-wide Analytics dashboard - response times, resolution and SLA benchmarks." },
   { id: "gemini", name: "Google Gemini", access: "read", note: "Structured-output ticket summaries, knowledge-base suggestions and product categorisation, quota-guarded with a model fallback chain." },
-  { id: "xero", name: "Xero", access: "write", note: "Per-year COGS journals generated from POS sales, validated to zero diffs against a real export." },
 ] satisfies Integration[];
 
 export const architecture = [
@@ -56,7 +52,7 @@ export const architecture = [
   { id: "db", label: "Supabase Postgres", sub: "RLS default-deny, 20 migrations", edges: [] },
   { id: "secrets", label: "Secret Manager", sub: "~150 store tokens, service keys", edges: [] },
   { id: "audit", label: "Audit log", sub: "before/after snapshots, undo", edges: ["db"] },
-  { id: "external", label: "External systems", sub: "Lightspeed, Google, Atlassian, Freshdesk, Gemini, Xero", edges: [] },
+  { id: "external", label: "External systems", sub: "Lightspeed, Google, Jira, Confluence, Freshdesk, Gemini", edges: [] },
   { id: "scheduler", label: "Cloud Scheduler", sub: "syncs 3x daily and every 30 min", edges: ["routes"] },
 ] satisfies ArchitectureNode[];
 

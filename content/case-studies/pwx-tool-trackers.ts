@@ -29,10 +29,8 @@ export const pwxToolTrackers = {
   ],
   metrics: [
     { value: "140+", label: "franchises served", note: "AU, NZ and US" },
-    { value: "78", label: "API routes" },
-    { value: "~55k", label: "lines of TypeScript", note: "224 files, 20 runtime dependencies" },
     { value: "12", label: "operational tools" },
-    { value: "~150", label: "store tokens in Secret Manager", note: "never in the browser or logs" },
+    { value: "~130k", label: "support tickets mirrored" },
     { value: "3 yrs", label: "of monthly exports in minutes", note: "previously dozens of manual downloads per store" },
   ],
   confidentiality: "described-only",

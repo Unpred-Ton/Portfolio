@@ -16,7 +16,7 @@ export function Skills() {
       id="skills"
       index="04 / Skills"
       heading="What I bring"
-      lead="Depth in spreadsheets and data pipelines, extended in the last two years into full-stack web, cloud and API integration."
+      lead="Depth in spreadsheets and data pipelines, extended in the last two years into full-stack (AI-assisted) web, cloud and API integration."
     >
       <div className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2">
         {(["expert", "proficient", "working"] as SkillLevel[]).map((lv) => (

@@ -14,7 +14,6 @@ export function Window({ title, caption, children }: { title: string; caption: s
             <span className="inline-block h-2 w-2 rounded-full bg-[#003da5]" />
             {title}
           </span>
-          <span className="text-[#94a3b8]">synthetic data</span>
         </div>
         <div className="overflow-x-hidden p-3 text-[12px] leading-[1.35]">{children}</div>
       </div>

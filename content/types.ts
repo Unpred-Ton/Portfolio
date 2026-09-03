@@ -33,6 +33,8 @@ export type RecreationId = "dashboard" | "audit-undo" | "tracker-builder" | "exp
 export interface CaseStudy {
   id: string;
   title: string;
+  /** Optional qualifier shown after the title (e.g. to distinguish same-named work). */
+  subtitle?: string;
   era: Era;
   kind: "legacy" | "project" | "flagship";
   org: string;

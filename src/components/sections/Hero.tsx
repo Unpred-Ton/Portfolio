@@ -69,7 +69,7 @@ export function Hero() {
           </h1>
 
           <p data-hero className="tag mt-6 text-[0.8125rem] text-ink-2">
-            Data automation engineer<span className="text-line-2"> / </span>full-stack web developer
+            Data specialist<span className="text-line-2"> / </span>Data automation<span className="text-line-2"> / </span>Webapp dev (AI-assisted)
           </p>
 
           <p data-hero className="mt-6 max-w-[46ch] text-xl leading-relaxed text-ink-2 sm:text-2xl">

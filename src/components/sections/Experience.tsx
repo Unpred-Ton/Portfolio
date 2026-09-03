@@ -10,7 +10,7 @@ function fmt(iso?: string): string {
   return `${MONTHS[Number(m) - 1]} ${y}`;
 }
 
-const eraLabel: Record<Era, string> = { vba: "Excel VBA", "apps-script": "Apps Script", "full-stack": "Full-stack" };
+const eraLabel: Record<Era, string> = { vba: "Excel VBA", "apps-script": "Apps Script", "full-stack": "Full-stack (AI-assisted)" };
 const eraDot: Record<Era, string> = {
   vba: "bg-surface ring-line-2",
   "apps-script": "bg-ink ring-ink",

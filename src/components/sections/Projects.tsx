@@ -7,7 +7,7 @@ import { Icon } from "@/components/ui/Icon";
 const eraLabel: Record<CaseStudy["era"], string> = {
   vba: "Excel VBA",
   "apps-script": "Apps Script",
-  "full-stack": "Full-stack",
+  "full-stack": "Full-stack (AI-assisted)",
 };
 
 function Card({ cs }: { cs: CaseStudy }) {
@@ -23,7 +23,12 @@ function Card({ cs }: { cs: CaseStudy }) {
               {cs.org} / {cs.period}
             </span>
           </div>
-          <h3 className="mt-2.5 text-xl font-bold tracking-[-0.02em] text-ink sm:text-[1.375rem]">{cs.title}</h3>
+          <h3 className="mt-2.5 text-xl font-bold tracking-[-0.02em] text-ink sm:text-[1.375rem]">
+            {cs.title}
+            {cs.subtitle ? (
+              <span className="ml-2 text-base font-medium text-ink-muted">· {cs.subtitle}</span>
+            ) : null}
+          </h3>
           <p className="mt-2 max-w-[70ch] leading-relaxed text-ink-2">{cs.problem}</p>
         </div>
         <span className="mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line text-ink-2 transition-transform duration-300 group-open:rotate-180">
