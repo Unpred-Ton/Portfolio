@@ -8,7 +8,7 @@ import { Icon } from "@/components/ui/Icon";
 const links = [
   { label: "Email", value: site.email, href: `mailto:${site.email}`, icon: "mail" as const, external: false },
   { label: "LinkedIn", value: "in/johnson-bolhayon", href: site.linkedin, icon: "linkedin" as const, external: true },
-  { label: "GitHub", value: "github.com/johnsonbolhayon", href: site.github, icon: "github" as const, external: true },
+  { label: "GitHub", value: "github.com/Unpred-Ton", href: site.github, icon: "github" as const, external: true },
 ];
 
 export function Contact() {
