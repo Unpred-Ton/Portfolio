@@ -22,3 +22,12 @@ No image-generation tool is available in this environment, so the direction is b
 
 ## 2026-09-03 Phone number stays in the CV PDF only
 The site shows email, LinkedIn, GitHub and location. The downloadable CV keeps the phone number because recruiters expect one on a CV; the owner can swap in a phone-free export at any time.
+
+## 2026-09-03 Visual world: The Green-Bar Printout
+The impeccable direction round (seed 7f3a9c21, Experience mode) assigned The Punched Card; the user chose the pick card, The Green-Bar Printout. The page is one continuous form: bars every three lines, tractor strips, fan-fold page breaks with job and page counters, a banner page printed row by row. Faces: Workbench (banners), Martian Mono (data), Schibsted Grotesk (prose). Red ribbon is reserved for actions.
+
+## 2026-09-03 The printer is the 3D object; the fan-fold stack was cut
+A first build put a folding paper stack behind the housing. Scrolling down feeds the paper *into* the printer, so the stack belongs inside the machine and was invisible in the honest position; rendered in front it covered the page. The 3D scene is now the housing, exit slot, sheet and two sprockets that turn with scroll. Bounded to the top ~15% of the viewport at the hero and ~6% after.
+
+## 2026-09-03 Detector advisory accepted: the bar background
+`detect.mjs` flags the body's `linear-gradient` bars as a decorative grid background. Here the stripes are the subject itself (green-bar paper), which the craft floor names as the case that earns them. Accepted, not suppressed.

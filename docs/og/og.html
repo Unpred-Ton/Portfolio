@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>OG image source - Johnson Bolhayon</title>
+<style>
+  @font-face { font-family: "Workbench"; src: url("../../src/app/fonts/workbench.woff2") format("woff2"); }
+  @font-face { font-family: "Martian Mono"; src: url("../../src/app/fonts/martian-mono.woff2") format("woff2"); font-weight: 100 800; }
+  @font-face { font-family: "Schibsted Grotesk"; src: url("../../src/app/fonts/schibsted-grotesk.woff2") format("woff2"); font-weight: 400 900; }
+  html, body { margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background-color: #f6f3e9;
+    background-image: linear-gradient(to bottom, #d3e6d2 0, #d3e6d2 72px, transparent 72px, transparent 144px);
+    background-size: 100% 144px;
+    color: #1b2733; font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  }
+  .printer { position: absolute; inset: 0 0 auto 0; height: 84px; background: #2a2f33; }
+  .printer::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 6px; background: #3a4147; }
+  .printer::after { content: ""; position: absolute; left: 40px; right: 40px; bottom: 10px; height: 4px; background: #0f1214; }
+  .sprocket { position: absolute; bottom: 4px; width: 26px; height: 26px; border-radius: 50%; background: #8e979c; }
+  .tractor { position: absolute; top: 84px; bottom: 0; width: 44px; background-color: #ece8db;
+    background-image: radial-gradient(circle at 50% 50%, #2a2f33 0 5px, transparent 5.5px); background-size: 100% 24px; background-position: 0 12px;
+    border-left: 1px dashed #7f9088; border-right: 1px dashed #7f9088; }
+  .content { position: absolute; left: 92px; right: 92px; top: 118px; }
+  .job { font-family: "Martian Mono", monospace; font-size: 15px; color: #56666f; letter-spacing: 0.02em; }
+  .name { font-family: "Workbench", monospace; font-size: 118px; line-height: 1; margin: 22px 0 0; letter-spacing: 0.02em; }
+  .name span { display: block; }
+  .tag { font-family: "Martian Mono", monospace; font-size: 17px; text-transform: uppercase; letter-spacing: 0.06em; color: #56666f; margin-top: 22px; }
+  .line { font-size: 34px; font-weight: 500; margin-top: 12px; max-width: 900px; }
+  .ribbon { position: absolute; right: 92px; bottom: 60px; background: #c4302b; color: #f6f3e9; font-family: "Martian Mono", monospace; font-weight: 600; font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; padding: 14px 20px; }
+  .ruler { position: absolute; left: 92px; right: 92px; bottom: 26px; font-family: "Martian Mono", monospace; font-size: 12px; color: #56666f; white-space: nowrap; overflow: hidden; }
+</style>
+</head>
+<body>
+  <div class="printer"><div class="sprocket" style="left:14px"></div><div class="sprocket" style="right:14px"></div></div>
+  <div class="tractor" style="left:0"></div>
+  <div class="tractor" style="right:0"></div>
+  <div class="content">
+    <div class="job">**** JOB 0001 **** BANNER PAGE **** PRINTED FOR: WHOEVER IS HIRING</div>
+    <h1 class="name"><span>JOHNSON</span><span>BOLHAYON</span></h1>
+    <div class="tag">Data automation engineer · Web application developer</div>
+    <div class="line">I turn repetitive, high-volume data work into systems teams rely on.</div>
+  </div>
+  <div class="ribbon">Tear off the CV</div>
+  <div class="ruler">----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+----9----+----0----+----1----+----2----+----3</div>
+</body>
+</html>
