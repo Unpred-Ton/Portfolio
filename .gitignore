@@ -51,3 +51,7 @@ next-env.d.ts
 
 # ui-ux-pro-max detector / lighthouse output
 lighthouse-*.json
+
+# Confidential product snapshots - reference only, never committed or deployed.
+# The site ships stylised recreations with synthetic data instead.
+/.reference/

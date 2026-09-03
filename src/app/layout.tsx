@@ -3,7 +3,7 @@ import { site } from "@content/site";
 import { siteUrl } from "@/lib/env";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { SkipLink } from "@/components/ui/SkipLink";
-import { banner, data, prose } from "./fonts";
+import { sans, mono } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,18 +33,18 @@ const personJsonLd = {
 
 /* The direction contract survives the production build as a real HTML comment (see DESIGN.md at finish). */
 const DIRECTION_CONTRACT = `<!--
-THESIS: The portfolio is one continuous-form report feeding out of a line printer; it refuses the dark hero, gradient glow and card grid the category ships and prints its evidence in ruled lines instead.
-OWN-WORLD: Warm off-white paper barred pale green every three lines, perforated tractor strips on both edges, fan-fold page breaks with job and page counters, blue-black dot-matrix type (Workbench banners, Martian Mono data, Schibsted Grotesk prose), red ribbon only where something can be done.
-STORY: A hiring manager watches the banner page print the name, reads the career as numbered jobs, sees the flagship as a totals block with provenance and verified guardrails, and tears off the CV.
-FIRST VIEWPORT: A 3D line printer across the top with the fan-fold stack behind it; the banner page printing JOHNSON BOLHAYON in 5x7 character-matrix letters row by row; headline, one-liner and the red Tear-off-CV action beneath; the 132-column ruler at the foot.
-FORM: The Green-Bar Printout, candidate 1 of 7 on the grounded list, chosen by the user as Impeccable's pick over the assigned roll; seed key 7f3a9c21.
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+THESIS: A hiring manager's 20-second scan of an engineer who makes repetitive data work disappear; a clean, navigable case file, not a novelty.
+OWN-WORLD: Warm-paper light canvas, near-black Schibsted Grotesk with a Martian Mono data voice, one Action-Blue accent (#003DA5) borrowed from the flagship product, hairline rules and generous air; the product's own dark navy chrome quoted verbatim inside browser-window recreations - the only dark surfaces on the page.
+STORY: a sticky, scroll-spy nav lets the reader jump straight to the flagship, watch its tools run on synthetic data, read the nine-year arc from Excel VBA to a full-stack platform, then reach the contact block.
+FIRST VIEWPORT: name and role in large grotesk, a one-line thesis, two actions (see the flagship / download CV), a live availability pill and a three-figure proof strip, with a subtle 3D node-mesh of the platform's integrations drifting behind on the right.
+FORM: elevated clean professional portfolio, single page with anchored sections and a mobile drawer; light-committed, dark recreations by contrast. Chosen by the user over the earlier Green-Bar Printout, referencing a base44 layout as the pinned brief.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
 -->`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${banner.variable} ${data.variable} ${prose.variable}`}>
-      <body className="antialiased">
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+      <body>
         <div hidden aria-hidden="true" dangerouslySetInnerHTML={{ __html: DIRECTION_CONTRACT }} />
         <SkipLink />
         <MotionProvider>{children}</MotionProvider>

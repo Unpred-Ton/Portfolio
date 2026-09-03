@@ -1,12 +1,16 @@
 import { site } from "@content/site";
+import { Container } from "@/components/ui/Container";
 
 export function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-rule-strong py-line">
-      <p className="t-data flex flex-wrap justify-between gap-x-6 text-[11px] leading-line text-ink-muted">
-        <span>**** END OF JOB **** {site.name.toUpperCase()} **** {new Date().getFullYear()}</span>
-        <span>NEXT.JS · REACT THREE FIBER · GSAP · CODE MIT, CONTENT MINE</span>
-      </p>
+    <footer className="border-t border-line bg-bg py-10">
+      <Container className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <p className="text-sm text-ink-muted">
+          © {year} {site.name}. Built with Next.js, React Three Fiber and GSAP.
+        </p>
+        <p className="tag text-ink-muted">Code MIT / content mine</p>
+      </Container>
     </footer>
   );
 }
