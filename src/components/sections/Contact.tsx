@@ -52,15 +52,6 @@ export function Contact() {
                 </a>
               </li>
             ))}
-            <li className="flex items-center gap-3 py-4">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-surface-2 text-ink-2">
-                <Icon name="location" size={17} />
-              </span>
-              <span>
-                <span className="tag block">Based in</span>
-                <span className="font-medium text-ink">{site.location}</span>
-              </span>
-            </li>
           </ul>
         </Reveal>
       </div>
