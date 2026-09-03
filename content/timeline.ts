@@ -10,7 +10,7 @@ export const timeline = [
     start: "2025-06",
     summary:
       "Sole developer of PWX Tool Trackers, an internal franchise-operations platform used daily by the support team across 140+ franchises. Also support the Lightspeed-Xero-Vital trading-terms integration, automate catalogue management via the Lightspeed API, and write ad hoc Snowflake SQL.",
-    caseStudyIds: ["pwx-tool-trackers", "evo-platform-toolkit", "evo-tooling-standards", "cogs-apps-script"],
+    caseStudyIds: ["pwx-tool-trackers", "evo-platform-toolkit", "cogs-apps-script"],
   },
   {
     id: "poolwerx-migration",

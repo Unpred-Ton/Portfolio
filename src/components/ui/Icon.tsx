@@ -15,6 +15,7 @@ export type IconName =
   | "menu"
   | "close"
   | "plus"
+  | "minus"
   | "shield"
   | "location";
 
@@ -94,6 +95,7 @@ const PATHS: Record<IconName, React.ReactNode> = {
       <path d="M5 12h14" />
     </>
   ),
+  minus: <path d="M5 12h14" />,
   shield: (
     <>
       <path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z" />
