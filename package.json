@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack -p 8000",
     "build": "next build",
-    "build:local": "NODE_OPTIONS=--max-old-space-size=2048 next build",
+    "build:local": "cross-env NODE_OPTIONS=--max-old-space-size=2048 next build",
     "start": "next start -p 8000",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
@@ -30,6 +30,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/three": "^0.185.4",
+    "cross-env": "^7.0.3",
     "eslint": "^9",
     "eslint-config-next": "15.5.25",
     "tailwindcss": "^4",
