@@ -1,5 +1,7 @@
 import type { CaseStudy } from "../types";
 import { pwxToolTrackers } from "./pwx-tool-trackers";
+import { suklicoPos } from "./suklico-pos";
+import { tutorialVideoKit } from "./tutorial-video-kit";
 import { evoPlatformToolkit } from "./evo-platform-toolkit";
 import { cogsAppsScript } from "./cogs-apps-script";
 import { poolwerxMigrationTools } from "./poolwerx-migration-tools";
@@ -9,6 +11,8 @@ import { iqviaVbaTools } from "./iqvia-vba-tools";
 /** Newest first. */
 export const caseStudies: CaseStudy[] = [
   pwxToolTrackers,
+  suklicoPos,
+  tutorialVideoKit,
   evoPlatformToolkit,
   cogsAppsScript,
   poolwerxMigrationTools,

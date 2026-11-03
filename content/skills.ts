@@ -2,6 +2,16 @@ import type { SkillGroup } from "./types";
 
 export const skillGroups = [
   {
+    id: "ai",
+    label: "AI engineering",
+    skills: [
+      { name: "Gemini agents: function calling, structured output (responseSchema), model fallback chains, cache-aware prompting", level: "expert", since: 2025 },
+      { name: "LLM evals: replay harnesses with an LLM grader, precision-gated auto-accept", level: "proficient" },
+      { name: "Generative media: Gemini image generation, Gemini-TTS and Cloud Text-to-Speech voiceovers", level: "proficient" },
+      { name: "Claude Code: spec-driven, verification-first delivery", level: "expert", since: 2025 },
+    ],
+  },
+  {
     id: "spreadsheets",
     label: "Spreadsheets",
     skills: [
@@ -34,7 +44,9 @@ export const skillGroups = [
     label: "SQL and databases",
     skills: [
       { name: "PostgreSQL (RLS, migration-managed schemas)", level: "proficient", since: 2025 },
-      { name: "Supabase", level: "proficient", since: 2025 },
+      { name: "Supabase (Auth, Storage, Edge Functions)", level: "proficient", since: 2025 },
+      { name: "pgTAP database tests", level: "proficient" },
+      { name: "SQLite (offline-first, WAL, outbox sync)", level: "proficient" },
       { name: "MySQL, SQL Server, Firebird", level: "proficient", since: 2022 },
       { name: "Snowflake", level: "working", since: 2025 },
     ],
@@ -47,7 +59,7 @@ export const skillGroups = [
       { name: "Lightspeed X-Series API", level: "expert", since: 2025 },
       { name: "Google Sheets and Drive APIs (service accounts)", level: "expert" },
       { name: "Atlassian (Jira, Confluence), Freshdesk, Xero APIs", level: "proficient" },
-      { name: "Google Gemini API (structured output)", level: "proficient" },
+      { name: "Google Play Billing (server-side verification, RTDN)", level: "working" },
     ],
   },
   {
@@ -61,20 +73,31 @@ export const skillGroups = [
     ],
   },
   {
-    id: "cloud",
-    label: "Cloud and DevOps",
+    id: "mobile",
+    label: "Mobile",
     skills: [
-      { name: "Google Cloud: Cloud Run, Cloud Build, Artifact Registry, Secret Manager, Cloud Scheduler", level: "proficient", since: 2025 },
-      { name: "Docker, WSL2", level: "proficient" },
-      { name: "AWS Parameter Store and IAM", level: "working" },
+      { name: "React Native / Expo (SDK 57), Expo Router, Reanimated", level: "proficient", since: 2026 },
+      { name: "Kotlin native modules (Android)", level: "working" },
+      { name: "Bluetooth ESC/POS printing, camera barcode scanning", level: "working" },
     ],
   },
   {
-    id: "ai",
-    label: "AI-assisted development",
+    id: "media",
+    label: "Video and media pipelines",
     skills: [
-      { name: "Claude Code: spec-driven, verification-first delivery", level: "expert", since: 2025 },
-      { name: "Shipping AI product features (Gemini summaries, KB suggestions, categorisation) with quota guards", level: "proficient" },
+      { name: "Remotion (programmatic video in React)", level: "proficient" },
+      { name: "FFmpeg (compositing, camera moves, silence detection)", level: "proficient" },
+      { name: "Headless Chromium rendering (Playwright)", level: "proficient" },
+    ],
+  },
+  {
+    id: "cloud",
+    label: "Cloud and DevOps",
+    skills: [
+      { name: "Google Cloud: Cloud Run and Cloud Run Jobs, Cloud Build, Artifact Registry, Secret Manager, Cloud Scheduler, GCS", level: "proficient", since: 2025 },
+      { name: "Docker, WSL2", level: "proficient" },
+      { name: "Cloudflare Pages, EAS Build", level: "working" },
+      { name: "AWS Parameter Store and IAM", level: "working" },
     ],
   },
 ] satisfies SkillGroup[];

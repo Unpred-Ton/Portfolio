@@ -21,7 +21,7 @@ export function Experience() {
   return (
     <Section
       id="experience"
-      index="02 / Experience"
+      index="04 / Experience"
       heading="Nine years, one direction"
       lead="Every role automated the repetitive work of the last one. Spreadsheets taught the discipline, scripts scaled it, and the platform is where it all runs now."
     >

@@ -67,21 +67,25 @@ function Card({ cs }: { cs: CaseStudy }) {
           ))}
         </div>
 
-        <p className="mt-5 tag text-ink-muted">Employer project - described here, not linked or screenshotted.</p>
+        <p className="mt-5 tag text-ink-muted">
+          {cs.confidentiality === "private-repo"
+            ? "Personal project - private repository, code available on request."
+            : "Employer project - described here, not linked or screenshotted."}
+        </p>
       </div>
     </details>
   );
 }
 
 export function Projects() {
-  const others = caseStudies.filter((c) => c.kind !== "flagship");
+  const others = caseStudies.filter((c) => c.kind !== "flagship" && c.kind !== "showcase");
   return (
     <Section
       id="projects"
-      index="03 / Projects"
+      index="05 / Projects"
       bg="surface-2"
       heading="Selected work"
-      lead="The systems behind the platform, and the years of scripting and data work that led to it. Open any card for the detail."
+      lead="The tutorial-video kit, the systems behind the platform, and the years of scripting and data work that led to them. Open any card for the detail."
     >
       <Reveal stagger className="flex flex-col gap-4">
         {others.map((cs) => (

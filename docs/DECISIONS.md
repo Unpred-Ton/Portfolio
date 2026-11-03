@@ -37,3 +37,15 @@ The owner found the Green-Bar Printout ugly and pinned a base44 reference - a li
 
 ## 2026-09-03 Imagery: recreations, not real captures (reconfirmed)
 The owner supplied ~30 real snapshots of the webapp and legacy tools. Both prior decisions were reconfirmed via a structured question: polished recreations with synthetic data (zero confidential data ships), and an elevated take on the reference (no eyebrow labels, no 01/02/03 card numbers). The snapshots still carry internal URLs, franchise store codes and names, the work-email domain and a customer phone number, so they were moved out of `public/` into a gitignored `.reference/` folder - reference material only, never committed or deployed.
+
+## 2026-11-03 AI automations as their own section
+The flagship gained five Gemini features in Oct 2026, led by an autonomous Reply Assistant agent (function calling, structured output, a replay-test eval with an LLM grader). That is the most hireable thing on the page right now, so it has its own nav entry and section (`AiAutomations.tsx`, data in `content/ai.ts`) directly after the flagship rather than a bullet inside it. The agent is shown as a recreation in the product's dark chrome with invented ticket data; the real Freshdesk and franchise text never leaves the corporate network.
+
+## 2026-11-03 SukliCo POS showcase with real, owned imagery
+SukliCo POS is the owner's personal product, so the no-screenshot rule for employer work does not apply. The section uses the owner's own artwork: the brand cover, seven Gemini 2.5 Flash Image scenes from the marketing explainer (converted to WebP), and the 34-second explainer itself re-encoded to 720p (3.5 MB) so the page can play it without a video host. The scene with the contact email was left out. The repository is private while the app is in closed testing, so the site says "code available on request" instead of linking a 404.
+
+## 2026-11-03 Tutorial-video kit as a described-only card
+The franchise tutorial kit is employer work whose outputs are full of internal screens, so it joins the Projects cards as a narrative case study (`tutorial-video-kit.ts`) with no frames shown. The cloud runner and the Claude Project kit are worded as built, not deployed, until confirmed.
+
+## 2026-11-03 Gallery component generalised
+`ScreenshotMatrix` now takes its shots, period label, noun and image size as props so the Freshdesk reports and the SukliCo scenes share one lightbox. The Freshdesk shot list moved to `content/flagship.ts`.

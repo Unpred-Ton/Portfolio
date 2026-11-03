@@ -13,7 +13,7 @@ const links = [
 
 export function Contact() {
   return (
-    <Section id="contact" index="05 / Contact" bg="surface">
+    <Section id="contact" index="07 / Contact" bg="surface">
       <div className="grid gap-x-16 gap-y-12 lg:grid-cols-[1fr_0.85fr]">
         <Reveal>
           <h2 id="contact-h" className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-[1.02] tracking-[-0.03em] text-ink">

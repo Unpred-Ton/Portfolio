@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { caseStudyById } from "@content/case-studies";
-import { flagshipMetrics, integrations, securityLayers, tools } from "@content/flagship";
+import { flagshipMetrics, freshdeskShots, integrations, securityLayers, tools } from "@content/flagship";
 import type { FlagshipTool } from "@content/types";
 import { Section } from "./Section";
 import { Reveal } from "@/components/motion/Reveal";
@@ -34,6 +34,7 @@ const toolEmoji: Record<string, string> = {
   "supplier-update": "📇",
   "price-book-migration": "📗",
   "import-products": "📥",
+  "apl-mapping": "🔗",
   "bulk-price-update": "💲",
   "create-product-category": "🏷️",
   "team-analytics": "📈",
@@ -116,7 +117,7 @@ export function Flagship() {
 
         <Reveal className="mt-10">
           <p className="tag mb-4 text-ink-2">Drill-down reports - click any to enlarge and zoom</p>
-          <ScreenshotMatrix />
+          <ScreenshotMatrix shots={freshdeskShots} period="Aug 2026" noun="report" width={1136} height={662} />
         </Reveal>
       </div>
 
@@ -156,7 +157,7 @@ export function Flagship() {
         <div>
           <Reveal className="mb-6">
             <h3 className="text-2xl font-bold tracking-[-0.02em] text-ink">Integrations</h3>
-            <p className="mt-3 text-ink-2">Seven external systems - most behind Zod-validated server routes, with Confluence also updated through Claude Code&apos;s MCP.</p>
+            <p className="mt-3 text-ink-2">Seven external systems - most behind Zod-validated server routes, with Confluence also updated through Claude Code&apos;s MCP. The Gemini work has <a href="#ai" className="link-underline font-semibold text-accent">its own section</a>.</p>
           </Reveal>
           <Reveal stagger as="ul" className="divide-y divide-line border-y border-line">
             {integrations.map((it) => (
@@ -199,7 +200,7 @@ export function Flagship() {
         <Reveal className="mb-8 max-w-[60ch]">
           <h3 className="text-2xl font-bold tracking-[-0.02em] text-ink">The toolkit</h3>
           <p className="mt-3 text-ink-2">
-            Twelve operational tools plus the tracker builder, each replacing a manual job and each carrying its own safety
+            Thirteen operational tools plus the tracker builder, each replacing a manual job and each carrying its own safety
             rail.
           </p>
         </Reveal>

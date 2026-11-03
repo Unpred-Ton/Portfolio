@@ -7,6 +7,8 @@ import { Icon } from "./Icon";
 
 const items = [
   { id: "flagship", label: "Flagship" },
+  { id: "ai", label: "AI" },
+  { id: "suklico", label: "SukliCo" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },

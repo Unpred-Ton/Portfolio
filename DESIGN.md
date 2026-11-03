@@ -55,10 +55,14 @@ under reduced motion.
 ## Structure
 
 Sticky top nav with scroll-spy (active link underline) and a mobile drawer. Sections: Hero,
-Flagship (PWX Tool Trackers - metrics band, four dark recreation windows, an architecture diagram,
-integrations + security posture, the twelve-tool inventory), Experience (a nine-year timeline with a
-spine), Projects (the other case studies as `<details>` cards - keyboard-accessible, no JS needed),
-Skills (a capability matrix with a level legend, plus "How I work" principles), Contact, Footer.
+Flagship (PWX Tool Trackers - metrics band, anonymised analytics captures, four dark recreation
+windows, an architecture diagram, integrations + security posture, the thirteen-tool inventory),
+AI automations (metrics band, the Reply Assistant recreation in the same dark chrome, a six-step
+pipeline, four assist cards, shared guardrails), SukliCo POS (brand cover, metrics band, feature
+list, engineering list, a three-column Gemini-illustration gallery sharing the Freshdesk lightbox,
+and the explainer video), Experience (a nine-year timeline with a spine), Projects (the other case
+studies as `<details>` cards - keyboard-accessible, no JS needed), Skills (a capability matrix with
+a level legend, plus "How I work" principles), Contact, Footer.
 
 ## Accessibility
 

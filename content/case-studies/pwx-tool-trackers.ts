@@ -12,7 +12,7 @@ export const pwxToolTrackers = {
   approach:
     "Designed, built and operate an internal web platform end-to-end as the sole developer, AI-assisted with Claude Code. Next.js 14 App Router, TypeScript, Tailwind and Supabase (PostgreSQL), shipped as a Docker container on Google Cloud Run behind a custom HTTPS domain with Cloud Build deploys, Secret Manager and Cloud Scheduler jobs. Every export engine is verified cell-for-cell against the manual report it replaces before it ships.",
   outcome:
-    "In daily production use since July 2026: a suite of Lightspeed POS tools, a no-code tracker builder, Jira / Freshdesk / Confluence in one dashboard, Gemini-powered ticket summaries, and a platform-wide audit log with one-click undo.",
+    "In daily production use since July 2026: thirteen Lightspeed POS tools, a no-code tracker builder, Jira / Freshdesk / Confluence in one dashboard, a platform-wide audit log with one-click undo, and five Gemini features including an autonomous agent that drafts answers to franchise support tickets.",
   stack: [
     "Next.js 14",
     "TypeScript",
@@ -24,12 +24,12 @@ export const pwxToolTrackers = {
     "Secret Manager",
     "Lightspeed X-Series API",
     "Google Drive / Sheets API",
-    "Gemini API",
+    "Gemini API (function calling, structured output)",
     "Zod",
   ],
   metrics: [
     { value: "140+", label: "franchises served", note: "AU, NZ and US" },
-    { value: "12", label: "operational tools" },
+    { value: "13", label: "operational tools" },
     { value: "~130k", label: "support tickets mirrored" },
     { value: "3 yrs", label: "of monthly exports in minutes", note: "previously dozens of manual downloads per store" },
   ],

@@ -31,12 +31,12 @@ Visited from a CV or LinkedIn link. The flagship is an internal, SSO-gated appli
 ## Capabilities and Constraints
 
 - Single page, one route, plus 404, sitemap, robots, OG image. No CMS, no backend, no analytics beyond the host's.
-- Sections: hero with the signature 3D scene; the arc (timeline + case-study cards); the flagship deep-dive (metrics, security posture, integrations, the 12 tools, recreations); other projects; skills matrix; how I work; contact with CV download.
+- Sections: hero with the signature 3D scene; the flagship deep-dive (metrics, real anonymised analytics, recreations, architecture, integrations, security posture, the 13 tools); the Gemini AI automations (metrics, the Reply Assistant agent recreation, the reply pipeline, four assists, shared guardrails); SukliCo POS (the owner's offline-first Android POS: cover, metrics, features, engineering, Gemini illustrations, explainer video); the arc (timeline + case-study cards); skills matrix; how I work; contact with CV download.
 - All copy is typed data in `content/`. Numbers must trace to the CV or the source repository's own documentation.
 - Confidentiality is a hard constraint enforced by `scripts/guard-confidential.mjs`: no internal URLs, corporate email domain, franchise names or store codes, secret schemes, real screenshots or real data. Employer and product names are already public on the CV and may be used.
 - Contact shows email, LinkedIn, GitHub and "Philippines (Remote)". No phone number on the site (it stays in the PDF by the owner's choice).
 - Performance and accessibility are non-negotiable: reduced-motion path renders every section in its final state; no-WebGL and low-power tiers fall back to posters; Lighthouse mobile targets 90 / 100 / 100 / 100.
-- Undecided: the final domain name (placeholder `johnsonbolhayon.dev` in `content/site.ts`); the exact GitHub profile URL (placeholder, marked TODO).
+- SukliCo POS is a personal product, so its own artwork and explainer video are real and may be shown. Its repository is private during testing: the site says "code available on request" and links nothing.
 
 ## Brand Commitments
 
@@ -47,8 +47,10 @@ Visited from a CV or LinkedIn link. The flagship is an internal, SSO-gated appli
 ## Evidence on Hand
 
 - The CV: `public/cv/Johnson_Bolhayon_CV.pdf` (source of truth for every career claim).
-- Verified flagship figures from the source repository's own docs: 78 API routes, ~55k lines TS/TSX across 224 files, 20 migrations, 12 tools, 20 runtime dependencies, ~150 store tokens in Secret Manager, ~130k tickets mirrored, three years of monthly exports in about a minute, Xero COGS validated to zero diffs, in production since July 2026.
-- No screenshots, no public repositories, no testimonials, no client logos. None of these may be fabricated; recreations are labelled synthetic.
+- Verified flagship figures from the source repository's own docs (Oct 2026): 159 API routes, ~87k lines TS/TSX across ~360 files, 48 migrations, 13 tools, ~150 store tokens in Secret Manager, ~130k tickets mirrored, three years of monthly exports in about a minute, Xero COGS validated to zero diffs, in production since July 2026. Gemini: five features; Reply Assistant eval baseline ~79 on 36 replayed tickets, cached prompt share 10% to ~50%, ~2 US cents per ticket; APL mapping first store 3,701 products, unmapped 2,348 to 1,450, 97%-precision auto-accept gate.
+- Verified SukliCo POS figures from its repository (Oct 2026): 85 commits over 18 days, 63 migrations, 3 Edge Functions, ~385 Jest tests, ~1,000 pgTAP assertions, Basic free / Premium US$6.99 a month with a 30-day trial; launch-ready, closed testing next, not yet on Google Play.
+- Tutorial-video kit: two published tutorials (13:42 / 101 beats and 35:50 / 254 beats), ~680 lines of Node; the cloud runner and Claude Project kit are built, deployment unconfirmed.
+- No employer screenshots beyond anonymised analytics, no public repositories, no testimonials, no client logos. None of these may be fabricated; recreations are labelled synthetic. SukliCo imagery is the owner's own.
 
 ## Product Principles
 

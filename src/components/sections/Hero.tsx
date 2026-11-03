@@ -12,7 +12,8 @@ import { gsap, useGSAP, NO_PREFERENCE } from "@/components/motion/gsap";
 const proof = [
   { v: "9+ yrs", l: "data automation" },
   { v: "140+", l: "franchises served" },
-  { v: "In production", l: "on Google Cloud" },
+  { v: "Gemini agent", l: "in production" },
+  { v: "1 mobile POS", l: "launch-ready" },
 ];
 
 export function Hero() {
@@ -69,7 +70,7 @@ export function Hero() {
           </h1>
 
           <p data-hero className="tag mt-6 text-[0.8125rem] text-ink-2">
-            Data specialist<span className="text-line-2"> / </span>Data automation<span className="text-line-2"> / </span>Webapp dev (AI-assisted)
+            Data automation<span className="text-line-2"> / </span>AI agents<span className="text-line-2"> / </span>Web + mobile apps (AI-assisted)
           </p>
 
           <p data-hero className="mt-6 max-w-[46ch] text-xl leading-relaxed text-ink-2 sm:text-2xl">

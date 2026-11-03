@@ -31,6 +31,25 @@ export const syntheticTickets = [
   { id: "DEMO-101", subject: "Category shows blank in report", status: "Resolved", priority: "Low" },
 ];
 
+/** An invented franchise reply and the agent's handling of it, for the Reply Assistant recreation. */
+export const syntheticBotTicket = {
+  id: "DEMO-2041",
+  subject: "COGS Mar - two items look wrong",
+  from: "Harbour Demo",
+  message:
+    "Hi team, the March sheet shows the pump at 412.50 but we paid 398 on the last invoice, and the test strips line is doubled. Can you check?",
+  decision: "Investigate",
+  tools: [
+    { call: "cogs.lineItems(store, 'Mar')", result: "2 rows flagged" },
+    { call: "lightspeed.products(store, 'pump 750')", result: "avg cost 412.50, last supply 398.00" },
+    { call: "tracker.state(store)", result: "Mar: In progress, 2 queries open" },
+  ],
+  draft:
+    "Thanks for checking. The 412.50 is the weighted average across all supplies on hand, so the 398 invoice pulls it down over time rather than replacing it. The doubled strips line is a duplicate receipt on 14 Mar; I have flagged it for reversal and the sheet will refresh at the next sync.",
+  confidence: 91,
+  knowledge: "KB: Average cost / Playbook: duplicate receipt / 3 learned answers",
+};
+
 export const syntheticExportMonths = [
   "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06",
   "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12",

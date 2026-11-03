@@ -1,7 +1,10 @@
 export type Era = "vba" | "apps-script" | "full-stack";
 
-/** Employer work is described, never linked or screenshotted. */
-export type Confidentiality = "described-only" | "public-repo";
+/**
+ * Employer work is described, never linked or screenshotted.
+ * A personal project with a private repository is described and offered "on request".
+ */
+export type Confidentiality = "described-only" | "private-repo" | "public-repo";
 
 export interface Metric {
   value: string;
@@ -28,7 +31,7 @@ export interface TimelineEntry {
   caseStudyIds: string[];
 }
 
-export type RecreationId = "dashboard" | "audit-undo" | "tracker-builder" | "export-walker";
+export type RecreationId = "dashboard" | "audit-undo" | "tracker-builder" | "export-walker" | "reply-assistant";
 
 export interface CaseStudy {
   id: string;
@@ -36,7 +39,8 @@ export interface CaseStudy {
   /** Optional qualifier shown after the title (e.g. to distinguish same-named work). */
   subtitle?: string;
   era: Era;
-  kind: "legacy" | "project" | "flagship";
+  /** `flagship` and `showcase` get their own sections; `project` and `legacy` are Projects cards. */
+  kind: "legacy" | "project" | "flagship" | "showcase";
   org: string;
   period: string;
   problem: string;
@@ -82,6 +86,44 @@ export interface ArchitectureNode {
   sub?: string;
   /** ids of nodes this one talks to */
   edges: string[];
+}
+
+/** A Gemini-powered feature on the flagship platform. */
+export interface AiFeature {
+  id: string;
+  name: string;
+  /** Where it lives in the product. */
+  where: string;
+  /** The manual job it takes over. */
+  replaces: string;
+  /** How it works, two or three sentences. */
+  mechanism: string;
+  /** The rail that keeps it honest. */
+  guardrail: string;
+  /** The headline feature gets the deep-dive treatment. */
+  headline?: boolean;
+}
+
+/** One step in the "how a ticket flows" strip. */
+export interface PipelineStep {
+  id: string;
+  label: string;
+  detail: string;
+}
+
+/** A real image shown in a gallery or lightbox. */
+export interface Shot {
+  src: string;
+  title: string;
+  caption: string;
+  alt: string;
+}
+
+/** A product capability, one line each. */
+export interface ProductFeature {
+  id: string;
+  name: string;
+  detail: string;
 }
 
 export type SkillLevel = "expert" | "proficient" | "working";

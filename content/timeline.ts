@@ -9,8 +9,8 @@ export const timeline = [
     location: "Australia (Remote)",
     start: "2025-06",
     summary:
-      "Sole developer of PWX Tool Trackers, an internal franchise-operations platform used daily by the support team across 140+ franchises. Also support the Lightspeed-Xero-Vital trading-terms integration, automate catalogue management via the Lightspeed API, and write ad hoc Snowflake SQL.",
-    caseStudyIds: ["pwx-tool-trackers", "evo-platform-toolkit", "cogs-apps-script"],
+      "Sole developer of PWX Tool Trackers, an internal franchise-operations platform used daily by the support team across 140+ franchises, now with five Gemini features including an agent that investigates and drafts answers to franchise support tickets. Built the team's narrated tutorial-video kit for franchise partners. Also support the Lightspeed-Xero-Vital trading-terms integration, automate catalogue management via the Lightspeed API, and write ad hoc Snowflake SQL.",
+    caseStudyIds: ["pwx-tool-trackers", "tutorial-video-kit", "evo-platform-toolkit", "cogs-apps-script"],
   },
   {
     id: "poolwerx-migration",
