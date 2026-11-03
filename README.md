@@ -4,7 +4,7 @@ Personal portfolio for a data automation engineer and full-stack developer.
 **Live at [johnsonbolhayon.com](https://johnsonbolhayon.com).**
 
 A clean, single-page site that leads with the flagship build (an internal franchise-operations
-platform), its Gemini agents, and SukliCo POS (an offline-first Android point of sale, a personal
+platform), its Gemini agents, and SukliCo POS (an offline-first mobile point of sale, a personal
 product), then tells the nine-year arc from Excel VBA to a full-stack platform. Built with
 Next.js 15 (App Router), TypeScript, Tailwind CSS 4, a subtle React Three Fiber node-mesh in the
 hero, and GSAP ScrollTrigger for motion. Deployed on Vercel.
@@ -17,7 +17,7 @@ hero, and GSAP ScrollTrigger for motion. Deployed on Vercel.
 | `src/app/` | Root layout (fonts, metadata), the single page, sitemap, robots, icon, 404 |
 | `src/components/sections/` | Hero, Flagship, AiAutomations, SukliCo, Experience, Projects, Skills, Contact, Footer |
 | `src/components/recreations/` | Stylised recreations of the flagship's screens with invented data (including the Reply Assistant agent), the architecture diagram, and the reusable image gallery |
-| `public/media/` | Real images that are safe to publish: anonymised Freshdesk analytics, and the owner's own SukliCo artwork (Gemini-generated scenes, brand cover, a compressed explainer video) |
+| `public/media/` | Real media that is safe to publish: anonymised Freshdesk analytics, the owner's own SukliCo artwork (Gemini-generated scenes, brand cover, a compressed explainer video), and the narrated AI walkthrough rendered from this site's own screens |
 | `src/components/three/` | The hero node-mesh: tiered scene, capability detection, flat SVG poster fallback |
 | `src/components/motion/` | GSAP setup, scroll reveals, counting readouts |
 | `scripts/guard-confidential.mjs` | CI guard: no phone numbers, internal hostnames, store codes or secret material may enter the repo |

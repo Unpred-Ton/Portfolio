@@ -1,4 +1,4 @@
-import { aiFeatures, aiGuardrails, aiMetrics, replyPipeline } from "@content/ai";
+import { aiFeatures, aiGuardrails, aiMetrics, aiVideo, replyPipeline } from "@content/ai";
 import { Section } from "./Section";
 import { Reveal } from "@/components/motion/Reveal";
 import { Readout } from "@/components/motion/Readout";
@@ -34,6 +34,31 @@ export function AiAutomations() {
           </div>
         ))}
       </Reveal>
+
+      {/* Narrated walkthrough */}
+      <div className="mb-20 grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
+        <Reveal>
+          <figure className="overflow-hidden rounded-[var(--radius-card)] border border-line bg-surface p-2 sm:p-3">
+            <video
+              controls
+              preload="none"
+              playsInline
+              poster={aiVideo.poster}
+              width={aiVideo.width}
+              height={aiVideo.height}
+              className="w-full rounded-lg border border-line-2 bg-black"
+              aria-label={`Narrated walkthrough of the Gemini features, ${aiVideo.duration}`}
+            >
+              <source src={aiVideo.src} type="video/mp4" />
+            </video>
+            <figcaption className="tag mt-3 px-1 text-ink-muted">Narrated, {aiVideo.duration}. First minute: the short version. The rest: how it works.</figcaption>
+          </figure>
+        </Reveal>
+        <Reveal>
+          <h3 className="text-2xl font-bold tracking-[-0.02em] text-ink">Watch the short version first</h3>
+          <p className="mt-3 leading-relaxed text-ink-2">{aiVideo.caption}</p>
+        </Reveal>
+      </div>
 
       {/* Headline: the Reply Assistant */}
       {headline ? (

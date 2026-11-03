@@ -12,6 +12,17 @@ export const aiMetrics = [
   { value: "~2c", label: "per support ticket answered", note: "US cents, paid-tier key" },
 ] satisfies Metric[];
 
+/** The narrated walkthrough, rendered with the same screenshots-to-MP4 kit described in Projects. */
+export const aiVideo = {
+  src: "/media/ai/walkthrough-720p.mp4",
+  poster: "/media/ai/walkthrough-poster.webp",
+  width: 1280,
+  height: 720,
+  duration: "3 min",
+  caption:
+    "The first minute is the short version: what the agent does, how it was trained, what it costs and who stays in control. The rest is for whoever reviews the engineering. Made with the storyboard-to-video kit from the Projects section: screenshots of this page, a YAML storyboard, headless Chromium graphics, FFmpeg and Google Cloud Text-to-Speech.",
+};
+
 export const aiFeatures = [
   {
     id: "reply-assistant",

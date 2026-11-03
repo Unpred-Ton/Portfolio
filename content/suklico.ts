@@ -1,7 +1,7 @@
 import type { Metric, ProductFeature, SecurityLayer, Shot } from "./types";
 
 /**
- * SukliCo POS: the owner's own offline-first Android point of sale for small Philippine stores.
+ * SukliCo POS: the owner's own offline-first mobile point of sale for small Philippine stores.
  * Figures are from the repository's own docs and test suites at the time of writing (Oct 2026).
  */
 

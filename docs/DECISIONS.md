@@ -49,3 +49,11 @@ The franchise tutorial kit is employer work whose outputs are full of internal s
 
 ## 2026-11-03 Gallery component generalised
 `ScreenshotMatrix` now takes its shots, period label, noun and image size as props so the Freshdesk reports and the SukliCo scenes share one lightbox. The Freshdesk shot list moved to `content/flagship.ts`.
+
+## 2026-11-03 Narrated AI walkthrough, rendered with the tutorial kit
+The AI section opens with a narrated video of under three minutes. It was rendered with a re-themed copy of the franchise tutorial-video kit (portfolio palette, JB monogram, node-mesh backdrop; none of the employer's branding or assets) from 2x screenshots of this site's own AI section, so nothing on screen is confidential. The voice is Google Cloud Text-to-Speech, which the kit already uses, on the owner's work GCP project at the owner's explicit request (free tier). Only the compressed 720p MP4 and poster enter the repo; the storyboard and working copy stay outside it.
+
+The cut is layered for two audiences: the first minute is a stand-alone plain-language summary (what the agent does, how the owner trained it on simulated franchise questions, what it costs, who approves), then a chapter card marks the technical part, where every term is paired with its consequence in the same sentence. The voice track names the employer platform and the owner's first name (for the training credit) but not the surname or this site, so the file can be forwarded on its own. Captions were dropped on purpose: the kit's subtitle track duplicated the narration and the page's caption copy says what each part of the video is for.
+
+## 2026-11-03 CV regenerated from an HTML source outside the repo
+The CV PDF is rendered from an HTML source with headless Edge (Chromium print to A4 keeps the hyperlinks). The source lives outside this repo because it carries the owner's phone number, which the confidentiality guard rightly refuses in text files; only the PDF is published.

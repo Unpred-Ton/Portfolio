@@ -56,7 +56,7 @@ export function SukliCo() {
             sizes="(min-width: 1024px) 900px, 100vw"
           />
           <figcaption className="tag mt-3 px-1 text-ink-muted">
-            An Android point of sale for sari-sari and small grocery stores in the Philippines. Own brand, own code, own marketing.
+            A mobile point of sale for sari-sari and small grocery stores in the Philippines. Own brand, own code, own marketing.
           </figcaption>
         </figure>
       </Reveal>
